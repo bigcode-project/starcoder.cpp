@@ -68,8 +68,8 @@ main:    total time =  4580.56 ms
 
 ## Quick start
 ```bash
-git clone https://github.com/ggerganov/ggml
-cd ggml
+git clone https://github.com/bigcode-project/starcoder.cpp
+cd starcoder.cpp
 
 # Convert HF model to ggml
 python convert-hf-to-ggml.py bigcode/gpt_bigcode-santacoder
