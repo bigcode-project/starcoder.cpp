@@ -1,7 +1,7 @@
-#include "ggml/ggml.h"
+#include "ggml.h"
 
 #include "common.h"
-#include "common-ggml.h"
+// #include "common-ggml.h"
 
 #include <cassert>
 #include <cmath>

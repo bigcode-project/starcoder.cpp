@@ -72,17 +72,16 @@ git clone https://github.com/ggerganov/ggml
 cd ggml
 
 # Convert HF model to ggml
-python examples/starcoder/convert-hf-to-ggml.py bigcode/gpt_bigcode-santacoder
+python convert-hf-to-ggml.py bigcode/gpt_bigcode-santacoder
 
-# Build ggml + examples
-mkdir build && cd build
-cmake .. && make -j4 starcoder starcoder-quantize
+# Build ggml libraries
+make
 
 # quantize the model
-./bin/starcoder-quantize ../models/bigcode/gpt_bigcode-santacoder-ggml.bin ../models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin 3
+./quantize models/bigcode/gpt_bigcode-santacoder-ggml.bin models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin 3
 
 # run inference
-./bin/starcoder -m ../models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin -p "def fibonnaci(" --top_k 0 --top_p 0.95 --temp 0.2
+./main -m models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin -p "def fibonnaci(" --top_k 0 --top_p 0.95 --temp 0.2
 ```
 
 
@@ -92,7 +91,7 @@ You can download the original model and convert it to `ggml` format using the sc
 
 ```
 # Convert HF model to ggml
-python examples/starcoder/convert-hf-to-ggml.py bigcode/gpt_bigcode-santacoder
+python convert-hf-to-ggml.py bigcode/gpt_bigcode-santacoder
 ```
 
 This conversion requires that you have python and Transformers installed on your computer.
@@ -103,7 +102,7 @@ You can also try to quantize the `ggml` models via 4-bit integer quantization.
 
 ```
 # quantize the model
-./bin/starcoder-quantize ../models/bigcode/gpt_bigcode-santacoder-ggml.bin ../models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin 3
+./quantize models/bigcode/gpt_bigcode-santacoder-ggml.bin models/bigcode/gpt_bigcode-santacoder-ggml-q4_1.bin 3
 ```
 
 | Model | Original size | Quantized size | Quantization type |

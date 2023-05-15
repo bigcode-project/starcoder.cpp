@@ -1,7 +1,7 @@
-#include "ggml/ggml.h"
+#include "ggml.h"
 
 #include "common.h"
-#include "common-ggml.h"
+// #include "common-ggml.h"
 
 #include <cassert>
 #include <cmath>
@@ -707,7 +707,7 @@ int main(int argc, char ** argv) {
     const int64_t t_main_start_us = ggml_time_us();
 
     gpt_params params;
-    params.model = "models/gpt-2-117M/ggml-model.bin";
+    params.model = "models/bigcode/gpt_bigcode-santacoder-ggml.bin";
 
     if (gpt_params_parse(argc, argv, params) == false) {
         return 1;
