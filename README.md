@@ -109,3 +109,10 @@ You can also try to quantize the `ggml` models via 4-bit integer quantization.
 | --- | --- | --- | --- |
 | `bigcode/gpt_bigcode-santacoder` | 5396.45 MB | 1026.83 MB | 4-bit integer (q4_1) |
 | `bigcode/starcoder` | 71628.23 MB | 13596.23 MB | 4-bit integer (q4_1) |
+
+## iOS App
+
+The repo includes a proof-of-concept iOS app in the `StarCoderApp` directory. You need to provide the converted (and possibly quantized) model weights, placing a file called `bigcode_ggml_model.bin.bin` inside that folder. This is what it looks like on an iPhone:
+
+![starcoder-ios-screenshot](assets/starcoder-ios.png)
+
