@@ -2,7 +2,7 @@
 
 This is a C++ example running 💫 StarCoder inference using the [ggml](https://github.com/ggerganov/ggml) library.
 
-The program runs on the CPU - no video card is required.
+The program can run on the CPU - no video card is required.
 
 The example supports the following 💫 StarCoder models:
 
@@ -114,5 +114,5 @@ You can also try to quantize the `ggml` models via 4-bit integer quantization.
 
 The repo includes a proof-of-concept iOS app in the `StarCoderApp` directory. You need to provide the converted (and possibly quantized) model weights, placing a file called `bigcode_ggml_model.bin.bin` inside that folder. This is what it looks like on an iPhone:
 
-![starcoder-ios-screenshot](assets/starcoder-ios.png)
+![starcoder-ios-screenshot](assets/starcoder-ios.jpg)
 
