@@ -75,7 +75,7 @@ fout.write(struct.pack("i", 0x67676d6c)) # magic: ggml in hex
 vocab_size = hparams["vocab_size"]
 fout.write(struct.pack("i", vocab_size))
 # fout.write(struct.pack("i", len(encoder)))
-fout.write(struct.pack("i", hparams["n_positions"]))
+fout.write(struct.pack("i", hparams["n_positions"])) # n_ctx
 fout.write(struct.pack("i", hparams["n_embd"]))
 fout.write(struct.pack("i", hparams["n_head"]))
 fout.write(struct.pack("i", hparams["n_layer"]))
