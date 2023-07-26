@@ -8,6 +8,7 @@ The example supports the following 💫 StarCoder models:
 
 - `bigcode/starcoder`
 - `bigcode/gpt_bigcode-santacoder` aka the smol StarCoder
+- `HuggingFaceH4/starchat-beta` - the coding assistants based on StarCoderPlus
 
 Sample performance on MacBook M1 Pro:
 
