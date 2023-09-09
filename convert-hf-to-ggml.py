@@ -160,10 +160,10 @@ for name in list_vars.keys():
         print("  Skipping variable: " + name)
         continue
 
-    n_dims = len(data.shape);
+    n_dims = len(data.shape)
 
     # ftype == 0 -> float32, ftype == 1 -> float16
-    ftype = 0;
+    ftype = 0
     if use_f16:
         if (name == "model/wte" or name == "model/lm_head" or name[-2:] == "/g" or name[-2:] == "/w") and n_dims == 2:
             print("  Converting to float16")
@@ -201,7 +201,7 @@ for name in list_vars.keys():
     fout.write(struct.pack("iii", n_dims, len(str), ftype))
     for i in range(n_dims):
         fout.write(struct.pack("i", data.shape[n_dims - 1 - i]))
-    fout.write(str);
+    fout.write(str)
 
     # data
     data.tofile(fout)

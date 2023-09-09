@@ -714,6 +714,9 @@ extern const StarcoderModel * load_model(const char * model_path) {
 
     if (!starcoder_model_load(model_path, model->model, model->vocab)) {
         fprintf(stderr, "%s: failed to load model from '%s'\n", __func__, model_path);
+        
+        // free the mem, allocated for 'model' before returning
+        delete model;
         return NULL;
     }
     
